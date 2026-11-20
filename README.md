@@ -169,11 +169,6 @@ Las diferencias tienen explicación. La presión de Open-Meteo está calculada p
 
 **Prueba de desconexión.** Se cortó el WiFi cuatro veces con el comando `w`. En todas, la placa se reconectó en uno o dos segundos y siguió enviando datos normalmente.
 
-## Problemas que se encontraron y cómo se resolvieron
-
-- **El LED no encendía.** Era un cable mal conectado, el código estaba bien.
-- **La reconexión al WiFi se quedaba trabada.** A veces la placa seguía "a medio conectar" y rechazaba un nuevo intento. Se resolvió haciendo que, cada 15 segundos, corte del todo la conexión y empiece de cero.
-
 ## Limitaciones
 
 - Los sensores son de nivel educativo y no están calibrados de forma profesional.
