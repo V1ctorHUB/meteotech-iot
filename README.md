@@ -85,41 +85,6 @@ Estas dos ya vienen con la placa ESP32 y no hay que instalarlas:
 | WiFi.h | Conectarse a la red WiFi. |
 | Wire.h | Comunicarse con el BMP280 por los pines 21 y 22. |
 
-## Cómo ponerlo a funcionar
-
-### 1. Preparar Arduino IDE
-
-1. Abre Arduino IDE 2 y ve a *Preferencias*.
-2. En "URLs adicionales para el gestor de placas" pega:
-   `https://espressif.github.io/arduino-esp32/package_esp32_index.json`
-3. Ve a *Herramientas > Placa > Gestor de placas*, busca **esp32** e instálalo.
-4. Instala las librerías de la tabla de arriba.
-
-### 2. Preparar Adafruit IO
-
-Adafruit IO es una página gratuita que recibe los datos y los muestra en gráficas.
-
-1. Crea una cuenta en https://io.adafruit.com
-2. Ve a *Feeds* y crea cuatro, con estos nombres exactos: `temperatura`, `humedad`, `presion` y `luz`. Un feed es como una carpeta donde se guarda cada tipo de dato.
-3. Ve a *Dashboards*, crea uno y agrega para cada feed un medidor (*Gauge*) para el valor actual y una gráfica de línea (*Line Chart*) para ver cómo cambia con el tiempo.
-4. Toca el ícono de la llave amarilla (*My Key*). Ahí aparecen tu usuario y tu clave, que se usan en el siguiente paso.
-
-La cuenta gratuita permite hasta 30 datos por minuto. Este proyecto manda 16 (cuatro datos cada 15 segundos), así que no conviene usar la misma cuenta para otra cosa al mismo tiempo.
-
-### 3. Poner tus datos de WiFi y Adafruit
-
-Los datos privados no van dentro del código principal, van en un archivo aparte que no se comparte:
-
-1. En la carpeta `MeteoTech`, copia el archivo `credenciales.example.h` y ponle de nombre `credenciales.h`.
-2. Abre `credenciales.h` y llena el nombre de tu WiFi, su contraseña, tu usuario de Adafruit IO y tu clave.
-
-### 4. Subir el programa
-
-1. Abre `MeteoTech/MeteoTech.ino` en Arduino IDE.
-2. En *Herramientas > Placa* elige **ESP32 Dev Module** y luego el puerto USB donde está conectada.
-3. Presiona el botón de subir (la flecha). Si se queda en "Connecting...", mantén presionado el botón BOOT de la placa hasta que empiece a subir.
-4. Abre el monitor serial a 115200 baudios. Ahí verás una línea con las lecturas cada 15 segundos.
-
 ## Comandos de prueba
 
 Desde el monitor serial se pueden mandar dos letras para probar la estación sin tener que esperar a que cambie el clima:
