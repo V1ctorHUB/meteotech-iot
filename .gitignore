@@ -1,0 +1,12 @@
+# credenciales reales (usar credenciales.example.h como plantilla)
+credenciales.h
+.env
+.env.*
+
+# privado
+docs/
+.impeccable/
+.claude/
+
+# sistema
+.DS_Store
